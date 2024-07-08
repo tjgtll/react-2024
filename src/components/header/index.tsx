@@ -51,8 +51,8 @@ class Header extends Component<HeaderProps, HeaderState> {
               type="text"
               className={'header-search-input'}
               placeholder={'Search...'}
-              value={this.state.query}  
-              onChange={this.handleChange} 
+              value={this.state.query}
+              onChange={this.handleChange}
             />
             <button
               className="header-search-button"

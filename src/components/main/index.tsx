@@ -51,9 +51,7 @@ class Main extends Component<NonNullable<unknown>, MainState> {
     return (
       <div className="main-content">
         {error ? (
-          <div className="error-message">
-            {error.message}
-          </div>
+          <div className="error-message">{error.message}</div>
         ) : (
           searchResults.map((pokemon) => (
             <PokemonCard key={pokemon.name} pokemon={pokemon} />

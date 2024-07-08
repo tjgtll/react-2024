@@ -20,7 +20,6 @@ class App extends Component<object, AppState> {
   }
 
   handleSearch = (search: string): void => {
-   
     if (this.mainRef.current) {
       this.mainRef.current.fetchResults(search);
     }

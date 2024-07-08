@@ -52,13 +52,14 @@ class PokeApiService {
 
       const data: ApiResponse = await response.json();
       console.log(data);
-      if(query!="") {
+      if (query != '') {
         const id = this.extractPokemonId(data.results[0].url);
-        data.results[0].sprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
-      }else for (const pokemon of data.results) {
-        const id = this.extractPokemonId(pokemon.url);
-        pokemon.sprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
-      }
+        data.results[0].sprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+      } else
+        for (const pokemon of data.results) {
+          const id = this.extractPokemonId(pokemon.url);
+          pokemon.sprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+        }
       console.log(14);
       return data;
     } catch (error) {
