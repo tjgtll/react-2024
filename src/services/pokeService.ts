@@ -14,11 +14,12 @@ class PokeApiService {
     return parts[parts.length - 2];
   }
 
-  async getPokemonById(id: string): Promise<Pokemon | undefined> {
+  async getPokemonById(id: number): Promise<Pokemon> {
     const url = `${this.baseUrl}/pokemon/${id}`;
 
     try {
       const response: Response = await fetch(url);
+
       if (!response.ok) {
         throw new CustomError('Network response was not ok.');
       }
@@ -42,25 +43,29 @@ class PokeApiService {
       : `${this.baseUrl}/pokemon?limit=${limit}&offset=${offset}`;
 
     try {
-      console.log(11);
-
       const response: Response = await fetch(url);
+      if (response.status === 404) {
+        throw new CustomError('Not found');
+      }
       if (!response.ok) {
         throw new CustomError('Network response was not ok.');
       }
-      console.log(12);
 
       const data: ApiResponse = await response.json();
-      console.log(data);
-      if (query != '') {
-        const id = this.extractPokemonId(data.results[0].url);
-        data.results[0].sprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+      if (query !== '') {
+        const pokemon = await this.getPokemonById(data.id);
+
+        pokemon.sprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
+       
+        return {
+          results: [pokemon],
+          id: 0,
+        };
       } else
         for (const pokemon of data.results) {
           const id = this.extractPokemonId(pokemon.url);
           pokemon.sprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
         }
-      console.log(14);
       return data;
     } catch (error) {
       throw errorHandler(error);

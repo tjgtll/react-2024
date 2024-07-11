@@ -6,6 +6,5 @@ export interface Pokemon {
 
 export interface ApiResponse {
   results: Pokemon[];
-  totalResults: string;
-  Response: string;
+  id: number;
 }
