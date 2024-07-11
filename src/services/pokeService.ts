@@ -56,7 +56,7 @@ class PokeApiService {
         const pokemon = await this.getPokemonById(data.id);
 
         pokemon.sprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
-       
+
         return {
           results: [pokemon],
           id: 0,
