@@ -22,7 +22,9 @@ class Header extends Component<HeaderProps, HeaderState> {
   componentDidMount() {
     const savedQuery = localStorage.getItem('searchQuery');
     if (savedQuery) {
-      this.setState({ query: savedQuery });
+      this.setState({ query: savedQuery }, () => {
+        this.handleSearch();
+      });
     }
   }
 
@@ -31,12 +33,15 @@ class Header extends Component<HeaderProps, HeaderState> {
   };
 
   handleSearch = () => {
-    this.props.onSearch(this.state.query);
+    const { query } = this.state;
+    localStorage.setItem('searchQuery', query);
+    this.props.onSearch(query);
   };
 
   throwError = (): void => {
     this.setState({ hasError: true });
   };
+
   render() {
     return (
       <header className="header">
@@ -49,8 +54,8 @@ class Header extends Component<HeaderProps, HeaderState> {
             </button>
             <input
               type="text"
-              className={'header-search-input'}
-              placeholder={'Search...'}
+              className="header-search-input"
+              placeholder="Search..."
               value={this.state.query}
               onChange={this.handleChange}
             />
