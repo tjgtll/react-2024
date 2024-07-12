@@ -8,6 +8,7 @@ import './style.scss';
 interface MainState {
   searchResults: Pokemon[];
   error: CustomError | null;
+  isLoading: boolean;
 }
 
 class Main extends Component<NonNullable<unknown>, MainState> {
@@ -17,6 +18,7 @@ class Main extends Component<NonNullable<unknown>, MainState> {
     this.state = {
       searchResults: [],
       error: null,
+      isLoading: false,
     };
   }
 
@@ -28,6 +30,7 @@ class Main extends Component<NonNullable<unknown>, MainState> {
   }
 
   fetchResults = async (query: string): Promise<void> => {
+    this.setState({ isLoading: true });
     try {
       const data: ApiResponse | undefined = await service.getPokemonList(query);
       if (data && data.results) {
@@ -38,14 +41,17 @@ class Main extends Component<NonNullable<unknown>, MainState> {
     } catch (error: unknown) {
       this.setState({ error: error as CustomError });
     }
+    this.setState({ isLoading: false });
   };
 
   render() {
-    const { searchResults, error } = this.state;
+    const { searchResults, error, isLoading } = this.state;
 
     return (
       <div className="main-content">
-        {error ? (
+        {isLoading ? (
+            <div className="loader">Loading...</div>
+          ) : error ? (
           <div className="error-message">{error.message}</div>
         ) : (
           searchResults.map((pokemon) => (
