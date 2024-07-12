@@ -29,18 +29,13 @@ class Main extends Component<NonNullable<unknown>, MainState> {
 
   fetchResults = async (query: string): Promise<void> => {
     try {
-      console.log(1);
       const data: ApiResponse | undefined = await service.getPokemonList(query);
-      console.log(2);
-      console.log(data);
       if (data && data.results) {
         this.setState({ searchResults: data.results, error: null });
       } else {
         this.setState({ searchResults: [], error: null });
       }
-      console.log(3);
     } catch (error: unknown) {
-      console.log(4);
       this.setState({ error: error as CustomError });
     }
   };
