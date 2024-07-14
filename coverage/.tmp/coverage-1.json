@@ -1,1 +1,101 @@
-{"result":[{"scriptId":"1007","url":"file:///C:/Users/user/Desktop/rsschool/react-2024/test/setup.ts","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":1415,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":1415,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":677,"endOffset":721,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1384","url":"file:///C:/Users/user/Desktop/rsschool/react-2024/test/components/pokemonCard.test.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":4273,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":4273,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":1013,"endOffset":2115,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":1259,"endOffset":2111,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1389","url":"file:///C:/Users/user/Desktop/rsschool/react-2024/src/components/pokemonCard/index.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":3996,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":3996,"count":1}],"isBlockCoverage":true},{"functionName":"PokemonCard","ranges":[{"startOffset":582,"endOffset":1973,"count":1},{"startOffset":975,"endOffset":980,"count":0}],"isBlockCoverage":true},{"functionName":"get","ranges":[{"startOffset":2074,"endOffset":2101,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1449","url":"file:///C:/Users/user/Desktop/rsschool/react-2024/src/components/pokemonCard/style.scss","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":3761,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":3761,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":1009,"endOffset":1060,"count":0}],"isBlockCoverage":false}]}]}
+{
+  "result": [
+    {
+      "scriptId": "1007",
+      "url": "file:///C:/Users/user/Desktop/rsschool/react-2024/test/setup.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 1415, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 1415, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 677, "endOffset": 721, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1384",
+      "url": "file:///C:/Users/user/Desktop/rsschool/react-2024/test/components/pokemonCard.test.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 4273, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 4273, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1013, "endOffset": 2115, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1259, "endOffset": 2111, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1389",
+      "url": "file:///C:/Users/user/Desktop/rsschool/react-2024/src/components/pokemonCard/index.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 3996, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 3996, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "PokemonCard",
+          "ranges": [
+            { "startOffset": 582, "endOffset": 1973, "count": 1 },
+            { "startOffset": 975, "endOffset": 980, "count": 0 }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 2074, "endOffset": 2101, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1449",
+      "url": "file:///C:/Users/user/Desktop/rsschool/react-2024/src/components/pokemonCard/style.scss",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 3761, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 3761, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1009, "endOffset": 1060, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    }
+  ]
+}
