@@ -1,10 +1,10 @@
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import ErrorBoundary from './components/errorBoundary';
-import App from './App';
+import { App } from './app/App.tsx';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <ErrorBoundary>
+  <React.StrictMode>
     <App />
-  </ErrorBoundary>
+  </React.StrictMode>
 );

@@ -1,0 +1,15 @@
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  padding: 32px;
+}
+
+.pokemon-list__loader {
+  width: 100%;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}

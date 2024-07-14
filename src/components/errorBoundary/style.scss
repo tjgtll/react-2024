@@ -7,7 +7,7 @@
   text-align: center;
   background-color: #f4f4f6;
   color: #2e2e2e;
-  padding: 20px;
+  padding: 40px;
 
   & h1 {
     font-size: 3em;
@@ -20,14 +20,14 @@
   }
 
   & button {
-    padding: 10px 20px;
+    padding: 20px;
     font-size: 1em;
-    color: #fff;
-    background-color: #007bff;
+    color: black;
+    background-color: red($color: #e30e0e);
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
 
     &:hover {
       background-color: #0056b3;

@@ -1,75 +1,52 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import './style.scss';
 
 interface HeaderProps {
-  onSearch: (query: string) => void;
+  searchTerm: string;
+  searchHandler: (value: string) => void;
 }
 
-interface HeaderState {
-  query: string;
-  hasError: boolean;
-}
+export const Header = (props: HeaderProps) => {
+  const { searchTerm, searchHandler } = props;
+  const [inputValue, setInputValue] = useState(searchTerm);
 
-class Header extends Component<HeaderProps, HeaderState> {
-  constructor(props: HeaderProps) {
-    super(props);
-    this.state = {
-      query: '',
-      hasError: false,
-    };
-  }
-
-  componentDidMount() {
-    const savedQuery = localStorage.getItem('searchQuery');
-    if (savedQuery) {
-      this.setState({ query: savedQuery }, () => {
-        this.handleSearch();
-      });
-    }
-  }
-
-  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ query: event.target.value });
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = event.target.value;
+    setInputValue(inputValue);
   };
 
-  handleSearch = () => {
-    const { query } = this.state;
-    localStorage.setItem('searchQuery', query);
-    this.props.onSearch(query);
+  const handleSearch = (event: React.ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    searchHandler(inputValue.trim());
   };
 
-  throwError = (): void => {
-    this.setState({ hasError: true });
+  const throwError = () => {
+    throw new Error('Artificial Error thrown by button click');
   };
 
-  render() {
-    return (
-      <header className="header">
+  return (
+    <header className="header">
+      <form className="search-form" onSubmit={handleSearch}>
         <div className="header-container">
           <div className="header-logo">Logo</div>
-
           <div className="header-search-container">
-            <button className="header-search-button" onClick={this.throwError}>
+            <button className="header-search-button" onClick={throwError}>
               Throw Error
             </button>
             <input
               type="text"
               className="header-search-input"
               placeholder="Search..."
-              value={this.state.query}
-              onChange={this.handleChange}
+              value={inputValue}
+              onChange={handleChange}
             />
-            <button
-              className="header-search-button"
-              onClick={this.handleSearch}
-            >
+            <button className="header-search-button" type="submit">
               Search
             </button>
           </div>
         </div>
-      </header>
-    );
-  }
-}
-
-export default Header;
+      </form>
+    </header>
+  );
+};

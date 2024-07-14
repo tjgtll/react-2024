@@ -32,7 +32,6 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   handleReload = (): void => {
     this.setState({ hasError: false, error: null, errorInfo: null });
-    window.location.reload();
   };
 
   render() {
