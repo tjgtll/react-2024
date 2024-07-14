@@ -22,7 +22,7 @@ export const usePokeApi = (searchTerm: string) => {
         response.json().then((data) => {
           data.sprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
           data.url = `${BASE_API_URL}/pokemon/${data.id}/`;
-          
+
           setPokemonList([data]);
         });
       });
