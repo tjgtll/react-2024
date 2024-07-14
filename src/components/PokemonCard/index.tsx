@@ -10,19 +10,9 @@ export interface PokemonProps {
 export const PokemonCard = (props: PokemonProps) => {
   const { pathname } = useLocation();
   const { name, url, sprites } = props;
-  console.log(name, url, sprites);
   const pokemonId = url.split('/').reverse()[1];
 
   return (
-    // <div className="pokemon-card">
-    //   <h3>{name}</h3>
-    //   <div>
-    //     {/* <ul>
-    //       <li>url: {this.pokemon.url}</li>
-    //     </ul> */}
-    //     <img src={sprites} alt={name} />
-    //   </div>
-    // </div>
     <div className="pokemon-card">
       <Link
         to={

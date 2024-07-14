@@ -8,7 +8,7 @@ export const usePokeApi = (searchTerm: string) => {
 
   const getPokemonList = async (
     searchTerm: string,
-    limit: number = 10,
+    limit: number = 16,
     offset: number = 0
   ) => {
     searchTerm = searchTerm.toLowerCase();
@@ -21,8 +21,8 @@ export const usePokeApi = (searchTerm: string) => {
       fetch(url).then((response) => {
         response.json().then((data) => {
           data.sprites = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`;
-          data.url = `${BASE_API_URL}/pokemon/${data.id}`;
-
+          data.url = `${BASE_API_URL}/pokemon/${data.id}/`;
+          
           setPokemonList([data]);
         });
       });
