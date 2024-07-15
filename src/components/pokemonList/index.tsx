@@ -10,7 +10,11 @@ interface PokemonListProps {
 export const PokemonList = (props: PokemonListProps) => {
   const { searchTerm } = props;
   const [currentPage, setCurrentPage] = useState(0);
-  const { isLoading, pokemonList } = usePokeApi(searchTerm, 16, currentPage * 16);
+  const { isLoading, pokemonList } = usePokeApi(
+    searchTerm,
+    16,
+    currentPage * 16
+  );
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -36,7 +40,9 @@ export const PokemonList = (props: PokemonListProps) => {
             ))}
           </div>
           <div className="pokemon-pagination-controls">
-            <button onClick={handlePreviousPage} disabled={currentPage === 0}>Previous</button>
+            <button onClick={handlePreviousPage} disabled={currentPage === 0}>
+              Previous
+            </button>
             <button onClick={handleNextPage}>Next</button>
           </div>
         </>
