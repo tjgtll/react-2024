@@ -2,14 +2,12 @@ import { useEffect, useState } from 'react';
 import { PokemonProps } from '../components/pokemonCard/index';
 import { BASE_API_URL } from '../services/constants';
 
-export const usePokeApi = (searchTerm: string) => {
+export const usePokeApi = (searchTerm: string, limit: number = 16, offset: number = 0) => {
   const [isLoading, setIsLoading] = useState(false);
   const [pokemonList, setPokemonList] = useState<PokemonProps[]>([]);
 
   const getPokemonList = async (
     searchTerm: string,
-    limit: number = 16,
-    offset: number = 0
   ) => {
     searchTerm = searchTerm.toLowerCase();
     const url = searchTerm
@@ -47,7 +45,7 @@ export const usePokeApi = (searchTerm: string) => {
 
   useEffect(() => {
     getPokemonList(searchTerm);
-  }, [searchTerm]);
+  }, [searchTerm, limit, offset]);
 
   return { isLoading, pokemonList };
 };

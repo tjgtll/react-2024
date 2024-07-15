@@ -1,11 +1,7 @@
-.pokemon-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
-
 .pokemon-description {
+  position: fixed;
+  top: 100px;
+  left: 787px;
   padding: 20px;
   background: #f8f9fa;
   border: 1px solid #dee2e6;
