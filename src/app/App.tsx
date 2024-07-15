@@ -5,11 +5,13 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
+import notFound from '../assets/not-found.gif';
 import { Main } from '../components/main';
 import { PokemonDetailedCard } from '../components/pokemonDetailedCard';
 import { BASE_API_URL } from '../services/constants';
 import './App.css';
 import ErrorBoundary from '../components/errorBoundary';
+import { NotFound } from '../components/notFound';
 
 const getPokemonDetailedCard = async (id: string | undefined) => {
   if (!id) return;
@@ -37,7 +39,7 @@ export const App = () => {
           element={<PokemonDetailedCard />}
         />
       </Route>
-      <Route path="*" element={<p>404 not found</p>} />
+      <Route path="*" element={<NotFound/>} />
     </>
   );
   const router = createBrowserRouter(routers, {});
