@@ -5,7 +5,6 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import notFound from '../assets/not-found.gif';
 import { Main } from '../components/main';
 import { PokemonDetailedCard } from '../components/pokemonDetailedCard';
 import { BASE_API_URL } from '../services/constants';
@@ -39,7 +38,7 @@ export const App = () => {
           element={<PokemonDetailedCard />}
         />
       </Route>
-      <Route path="*" element={<NotFound/>} />
+      <Route path="*" element={<NotFound />} />
     </>
   );
   const router = createBrowserRouter(routers, {});
