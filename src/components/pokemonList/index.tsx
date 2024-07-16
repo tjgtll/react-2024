@@ -12,8 +12,8 @@ export const PokemonList = (props: PokemonListProps) => {
   const [currentPage, setCurrentPage] = useState(0);
   const { isLoading, pokemonList } = usePokeApi(
     searchTerm,
-    16,
-    currentPage * 16
+    10,
+    currentPage * 10
   );
 
   const handleNextPage = () => {
