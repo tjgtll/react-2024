@@ -1,9 +1,8 @@
 .pokemon-list {
-  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   padding: 20px;
 }
 
@@ -21,7 +20,7 @@
   flex-wrap: wrap;
   padding: 16px;
   button {
-    margin: 20px;
+    margin: 20px 20px 20px 0px;
     padding: 5px 10px;
     font-size: 1rem;
     border: none;
