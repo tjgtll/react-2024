@@ -1,0 +1,28 @@
+import { Link, useLocation } from 'react-router-dom';
+import './style.scss';
+
+export interface PokemonProps {
+  name: string;
+  sprites: string;
+  url: string;
+}
+
+export const PokemonCard = (props: PokemonProps) => {
+  const { pathname } = useLocation();
+  const { name, url, sprites } = props;
+  const pokemonId = url.split('/').reverse()[1];
+
+  return (
+    <div className="pokemon-card">
+      <Link
+        to={
+          `/pokemon/${pokemonId}` === pathname ? '/' : `/pokemon/${pokemonId}`
+        }
+        className="pokemon"
+      >
+        <h3>{name}</h3>
+        <img src={sprites} alt={name} />
+      </Link>
+    </div>
+  );
+};

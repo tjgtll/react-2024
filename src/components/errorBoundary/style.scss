@@ -1,0 +1,36 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f4f4f6;
+  color: #2e2e2e;
+  padding: 40px;
+
+  & h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  & p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  & button {
+    padding: 20px;
+    font-size: 1em;
+    color: black;
+    background-color: red($color: #e30e0e);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
